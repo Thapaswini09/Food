@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
     // origin: '*'
-   origin: 'http://localhost:3001', // your React frontend
+    origin: 'https://food-frontend-kqvh.onrender.com', // your React frontend
   credentials: true 
    
   }));
