@@ -28,7 +28,7 @@ const AdminRegister = () => {
     if (Object.keys(errordata).length === 0) {
       setErrors({});
       try {
-        const response = await axios.post('http://localhost:8000/api/admin-register', admin, {
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/admin-register`, admin, {
   headers: {
     'Content-Type': 'application/json',
   },
