@@ -27,8 +27,8 @@ function App() {
       <BrowserRouter>
         <Routes>
       <Route path="/" element={<Navigate to="/userlogin" />} />
+   <Route path="/adminlogin" element={<AdminLoginForm />} />
           <Route path="/adminregister" element={<AdminRegistrationForm />} />
-          <Route path="/adminlogin" element={<AdminLoginForm />} />
           <Route
             path="/admin"
             element={
