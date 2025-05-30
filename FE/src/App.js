@@ -60,7 +60,7 @@ function App() {
             <Route path='cart' element={<Cart/>} />
             <Route path="orders" element={<UserOrders />} />
           </Route>
-            <Route path="*" element={<NotFound />} />
+           <Route path="*" element={<div style={{ padding: '20px', color: 'red' }}>404 - Page Not Found</div>} />
         </Routes>
       </BrowserRouter>
     </>
