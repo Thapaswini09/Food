@@ -30,7 +30,7 @@ const RegistrationForm = () => {
       
       setErrors({});
       try {
-        const response = await axios.post('http://localhost:8000/api/users-register', register);
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users-register`, register);
         toast.success('User registered successfully!');
         setRegister({
           name:"",
