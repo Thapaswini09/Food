@@ -25,7 +25,7 @@ const Cart = () => {
       const cartIds = itemsdata.flatMap(order => order.carts.map(cart => cart._id));
       if (cartIds.length === 0) return alert("No items to checkout.");
 
-      const res = await axios.post('http://localhost:8000/api/all-order-data', { cartIds }, {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/all-order-data`, { cartIds }, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const Cart = () => {
 
   const handleSingleCheckout = async (cartId) => {
     try {
-      const res = await axios.post('http://localhost:8000/api/single-order-data', { id: cartId }, {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/single-order-data`, { id: cartId }, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const Cart = () => {
   };
 
   const handleRemoveItem = async (id) => {
-    const res = await axios.delete(`http://localhost:8000/api/user-delete-carts/${id}`, {
+    const res = await axios.delete(`${process.env.REACT_APP_API_URL}/api/user-delete-carts/${id}`, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
