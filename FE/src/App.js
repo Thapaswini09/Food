@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Routes>
       <Route path="/" element={<Navigate to="/userlogin" />} />
    <Route path="/adminlogin" element={<AdminLoginForm />} />
