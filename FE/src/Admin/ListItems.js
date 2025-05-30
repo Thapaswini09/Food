@@ -7,7 +7,7 @@ const ListItems = () => {
   const [itemsData, setItemsData] = useState([]);
 
   const getAdminItemsData = async () => {
-    const res = await axios.get('http://localhost:8000/api/admin-get-items', {
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin-get-items`, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
