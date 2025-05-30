@@ -6,7 +6,7 @@ const Cart = () => {
   const [itemsdata, setItemsdata] = useState([]);
 
   const getCartsData = async () => {
-    const res = await axios.get('${process.env.REACT_APP_API_URL}/api/user-get-carts', {
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user-get-carts`, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
