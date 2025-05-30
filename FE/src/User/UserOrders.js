@@ -8,7 +8,7 @@ const [ordersData, setOrdersData] = useState([]);
 
 const getUserOrderDeatils = async () => {
 try {
-const res = await axios.get('http://localhost:8000/api/user-get-orders', {
+const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user-get-orders`, {
 withCredentials: true,
 headers: {
 "Content-Type": "application/json",
