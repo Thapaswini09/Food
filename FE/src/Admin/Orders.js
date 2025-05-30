@@ -9,7 +9,7 @@ const Orders = () => {
 
   const getAdminOrderDeatils = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/admin-order-details', {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin-order-details`, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",
