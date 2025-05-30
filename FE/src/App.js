@@ -37,6 +37,7 @@ function App() {
               </AdminProtectedRoute>
             }
           >
+             <Route index element={<Navigate to="home" />} />
             <Route path="home" element={<Home />} />
             <Route path="additems" element={<AddItems
              />} />
