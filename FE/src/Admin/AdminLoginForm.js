@@ -21,7 +21,7 @@ const AdminLoginForm = () => {
     const errordata = LoginValidation(adminLogin);
     if (Object.keys(errordata).length === 0) {
       try {
-        const res = await axios.post('http://localhost:8000/api/admin-login', adminLogin);
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/admin-login`, adminLogin);
         Cookies.set('adminToken', res.data.token, { expires: new Date(new Date().getTime() + 60 * 60 * 1000) });//after 1 hour token will expire
         toast.success('Admin Login successful!');
         setTimeout(() => {
