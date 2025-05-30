@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import { Link, useNavigate } from 'react-router-dom';
 
 const AdminLoginForm = () => {
+  console.log("Admin Login component rendered");
   const navigate = useNavigate();
   const [adminLogin, setAdminLogin] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
