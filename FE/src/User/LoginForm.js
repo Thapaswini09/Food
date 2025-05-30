@@ -24,7 +24,7 @@ const LoginForm = () => {
     const errordata=LoginValidation(loginData);
     if (Object.keys(errordata).length === 0) {
       try {
-        const res=await axios.post('http://localhost:8000/api/user-login',loginData);
+        const res=await axios.post(`${process.env.REACT_APP_API_URL}/api/user-login`,loginData);
         const inTenMinutes = new Date(new Date().getTime() + 60 * 60 * 1000);//after 1 hour token will expire
         Cookies.set('userToken', res.data.token, { expires: inTenMinutes });
         toast.success('User Login successfully!');
