@@ -60,7 +60,7 @@ const AddItems = () => {
 
     try {
       const token = Cookies.get('adminToken');
-      const res = await axios.post('http://localhost:8000/api/add-items', formData, {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/add-items`, formData, {
         headers: {
           'x-access-token': token
         },
