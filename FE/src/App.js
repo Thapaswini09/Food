@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import RegistrationForm from './User/RegistrationForm';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginForm from './User/LoginForm';
 import Dashboard from './User/Dashboard';
 import ProtectedRoute from './User/ProtectedRoute';
@@ -26,6 +26,7 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Routes>
+      <Route path="/" element={<Navigate to="/userlogin" />} />
           <Route path="/adminregister" element={<AdminRegistrationForm />} />
           <Route path="/adminlogin" element={<AdminLoginForm />} />
           <Route
