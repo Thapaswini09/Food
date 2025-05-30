@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
+  console.log("🟢 RegistrationForm component loaded");
   const navigate = useNavigate();
   const [register,setRegister]=useState({
     name:"",
