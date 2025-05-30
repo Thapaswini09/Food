@@ -23,7 +23,7 @@ const Dashboard = () => {
     if (category && category !== "All") {
       queryParams.append("foodType", category);
     }
-    const res = await axios.get(`http://localhost:8000/api/user-getall-items?${queryParams.toString()}`, {
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/user-getall-items?${queryParams.toString()}`, {
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Dashboard = () => {
   
   const addToCartItems = async (id) => {
     const quantity = quantities[id] || 1;
-    await axios.post('http://localhost:8000/api/user-add-to-cart', {
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/user-add-to-cart`, {
       id,
       quantity
     }, {
