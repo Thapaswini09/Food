@@ -60,6 +60,7 @@ function App() {
             <Route path='cart' element={<Cart/>} />
             <Route path="orders" element={<UserOrders />} />
           </Route>
+            <Route path="*" element={<Navigate to="/userlogin" />} />
         </Routes>
       </BrowserRouter>
     </>
