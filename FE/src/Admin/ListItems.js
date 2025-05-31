@@ -96,8 +96,10 @@ const ListItems = () => {
           </p>
         ) : (
           itemsData.map((ele, index) => {
-            const imageUrl = `${process.env.REACT_APP_API_URL}${ele.foodImage}`;
-            console.log("Image URL:", imageUrl); // 🔍 Debug line
+            const imageUrl = ele.foodImage.startsWith("http")
+              ? ele.foodImage
+              : `${process.env.REACT_APP_API_URL}${ele.foodImage}`;
+            console.log("Image URL:", imageUrl);
 
             return (
               <div key={index} className="list-items__card">
